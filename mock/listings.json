@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Calculus Early Transcendentals",
+    "price": 45.00,
+    "condition": "good",
+    "image_url": "https://via.placeholder.com/300x200?text=Calculus",
+    "seller": "John Doe"
+  },
+  {
+    "id": 2,
+    "title": "Introduction to Algorithms",
+    "price": 60.00,
+    "condition": "like new",
+    "image_url": "https://via.placeholder.com/300x200?text=Algorithms",
+    "seller": "Jane Smith"
+  },
+  {
+    "id": 3,
+    "title": "Clean Code",
+    "price": 35.00,
+    "condition": "good",
+    "image_url": "https://via.placeholder.com/300x200?text=Clean+Code",
+    "seller": "Bob Johnson"
+  }
+]
