@@ -1,0 +1,17 @@
+# Ignore configuration files with credentials
+config.php
+.env
+
+# Ignore vendor if using Composer
+/vendor/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
