@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySwap</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="top-nav-inner">
+        <div class="brand-left">
+          <a href="index.html" class="brand" aria-label="StudySwap home">
+            <img src="assets/studyswap.png" class="brand-logo" alt="StudySwap" />
+          </a>
+          <a href="landing.html" class="icon-btn">HOME</a>
+        </div>
+        <div class="desktop-nav">
+          <nav class="links" aria-label="Shop sections">
+            <a href="index.html" class="link">ALL</a>
+            <a href="index.html?cat=exchange" class="link">EXCHANGE</a>
+            <a href="index.html?cat=buy" class="link">BUY</a>
+            <a href="search.html" class="link">SEARCH</a>
+            <a href="index.html" class="link">FILTER</a>
+          </nav>
+        </div>
+        <div class="top-nav-actions">
+          <a href="chats.html" class="icon-btn nav-side-link"><img class="chats-png" src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="Chats" /></a>
+          <div class="profile-menu" id="profileMenu">
+            <a href="login.html" class="icon-btn profile-link" id="profileLink" aria-label="Log in">
+              <img
+                class="profile-png"
+                src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+                alt=""
+              />
+            </a>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="profile-dd-email" id="profileEmail"></div>
+              <a class="profile-dd-link profile-dd-item" href="profile.html">PROFILE</a>
+              <a class="profile-dd-link profile-dd-item" href="my-listings.html">MY LISTINGS</a>
+              <a class="profile-dd-link profile-dd-item" href="my-offers.html">MY OFFERS</a>
+              <button type="button" class="profile-dd-item" id="logoutBtn">LOG OUT</button>
+            </div>
+          </div>
+          <a href="cart.html" class="icon-btn cart-btn" id="cartNavLink" aria-label="View cart">
+            <img
+              class="cart-png"
+              src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+              alt=""
+            />
+            <span id="cartCount" class="dot">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="checkout-main" id="checkoutRoot">
+      <div id="checkoutGate" class="checkout-gate" hidden>
+        <h1 class="page-title">CHECKOUT</h1>
+        <p class="checkout-gate-text micro">Log in with your university email to complete your order.</p>
+        <div class="checkout-gate-actions">
+          <a href="login.html?next=checkout.html" class="btn full">LOG IN</a>
+          <a href="signup.html?next=checkout.html" class="ghost-btn full checkout-ghost">SIGN UP</a>
+        </div>
+      </div>
+
+      <div id="checkoutFlow" class="checkout-flow" hidden>
+        <h1 class="page-title">CHECKOUT</h1>
+        <p class="checkout-lead micro">Secure demo checkout — no real charges.</p>
+
+        <form id="checkoutForm" class="checkout-form">
+          <section class="checkout-section">
+            <h2 class="checkout-section-title micro">ACCOUNT</h2>
+            <p class="checkout-email" id="checkoutEmailDisplay"></p>
+          </section>
+
+          <section class="checkout-section">
+            <h2 class="checkout-section-title micro">ORDER SUMMARY</h2>
+            <div id="checkoutLines" class="checkout-lines"></div>
+            <div class="checkout-subtotal" id="checkoutSubtotal"></div>
+          </section>
+
+          <section class="checkout-section">
+            <h2 class="checkout-section-title micro">DELIVERY</h2>
+            <div class="checkout-radio-group">
+              <label class="checkout-radio"
+                ><input type="radio" name="delivery" value="campus" checked /> Campus meet-up (seller arranges)</label
+              >
+              <label class="checkout-radio"
+                ><input type="radio" name="delivery" value="mail" /> Local mail (HK)</label
+              >
+            </div>
+            <div class="form-field" id="addressField">
+              <label class="micro" for="address">SHIPPING ADDRESS (IF MAIL)</label>
+              <textarea id="address" name="address" rows="3" class="auth-input checkout-textarea" placeholder="Building, district, HK"></textarea>
+            </div>
+          </section>
+
+          <section class="checkout-section">
+            <h2 class="checkout-section-title micro">PAYMENT</h2>
+            <p class="micro checkout-pay-note">Demo only — card details are not stored or transmitted.</p>
+            <div class="checkout-radio-group checkout-pay-methods">
+              <label class="checkout-radio"
+                ><input type="radio" name="pay" value="card" checked /> Credit / debit card</label
+              >
+              <label class="checkout-radio"><input type="radio" name="pay" value="fps" /> FPS (HK)</label>
+              <label class="checkout-radio"><input type="radio" name="pay" value="other" /> Other (meet in person)</label>
+            </div>
+            <div id="cardFields" class="checkout-card-fields">
+              <div class="form-field">
+                <label class="micro" for="cardName">NAME ON CARD</label>
+                <input type="text" id="cardName" name="cardName" class="auth-input" autocomplete="cc-name" />
+              </div>
+              <div class="form-field">
+                <label class="micro" for="cardNumber">CARD NUMBER</label>
+                <input type="text" id="cardNumber" name="cardNumber" class="auth-input" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" />
+              </div>
+              <div class="checkout-card-row">
+                <div class="form-field">
+                  <label class="micro" for="cardExp">EXPIRY</label>
+                  <input type="text" id="cardExp" name="cardExp" class="auth-input" placeholder="MM/YY" maxlength="5" />
+                </div>
+                <div class="form-field">
+                  <label class="micro" for="cardCvc">CVC</label>
+                  <input type="text" id="cardCvc" name="cardCvc" class="auth-input" inputmode="numeric" maxlength="4" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <label class="checkout-terms">
+            <input type="checkbox" id="terms" name="terms" required />
+            <span>I agree to the mock terms and understand this is a student demo.</span>
+          </label>
+
+          <p id="checkoutError" class="auth-error" hidden role="alert"></p>
+
+          <button type="submit" class="btn full checkout-pay-btn" id="placeOrderBtn">PAY &amp; PLACE ORDER</button>
+        </form>
+      </div>
+
+      <div id="checkoutSuccess" class="checkout-success" hidden>
+        <h1 class="page-title">THANK YOU</h1>
+        <p class="checkout-success-text" id="successMessage"></p>
+        <a href="index.html" class="btn full">BACK TO SHOP</a>
+      </div>
+    </main>
+
+    <script src="assets/js/store-shared.js"></script>
+    <script src="assets/js/store-auth.js"></script>
+    <script>
+      window.StoreAuth.updateNav();
+    </script>
+    <script src="assets/js/store-checkout.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySwap</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="top-nav-inner">
+        <div class="brand-left">
+          <a href="index.html" class="brand" aria-label="StudySwap home">
+            <img src="assets/studyswap.png" class="brand-logo" alt="StudySwap" />
+          </a>
+          <a href="landing.html" class="icon-btn">HOME</a>
+        </div>
+        <div class="desktop-nav">
+          <nav class="links" aria-label="Shop sections">
+            <a href="index.html" class="link">ALL</a>
+            <a href="index.html?cat=exchange" class="link">EXCHANGE</a>
+            <a href="index.html?cat=buy" class="link">BUY</a>
+            <a href="search.html" class="link">SEARCH</a>
+          </nav>
+        </div>
+        <div class="top-nav-actions">
+          <div class="profile-menu logged-in" id="profileMenu">
+            <a href="profile.html" class="icon-btn profile-link" id="profileLink" aria-label="Profile">
+              <img
+                class="profile-png"
+                src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+                alt=""
+              />
+            </a>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="profile-dd-email" id="profileEmail"></div>
+              <a class="profile-dd-link profile-dd-item" href="profile.html">PROFILE</a>
+              <a class="profile-dd-link profile-dd-item" href="my-listings.html">MY LISTINGS</a>
+              <a class="profile-dd-link profile-dd-item" href="my-offers.html">MY OFFERS</a>
+              <button type="button" class="profile-dd-item" id="logoutBtn">LOG OUT</button>
+            </div>
+          </div>
+          <a href="chats.html" class="icon-btn nav-side-link"><img class="chats-png" src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="Chats" /></a>
+          <a href="cart.html" class="icon-btn cart-btn" id="cartNavLink" aria-label="View cart">
+            <img
+              class="cart-png"
+              src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+              alt=""
+            />
+            <span id="cartCount" class="dot">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="profile-main">
+      <h1 class="page-title">PROFILE</h1>
+
+      <section class="profile-card">
+        <div class="profile-row">
+          <div>
+            <p class="micro">USERNAME</p>
+            <p class="profile-value" id="profileUsername">—</p>
+          </div>
+          <div>
+            <p class="micro">UNIVERSITY</p>
+            <p class="profile-value" id="profileUniversity">—</p>
+          </div>
+        </div>
+        <p class="micro profile-email" id="profileEmailInline"></p>
+      </section>
+
+      <section class="profile-card">
+        <h2 class="micro profile-section-title">YOUR LISTINGS</h2>
+        <div id="myListings" class="profile-listings"></div>
+      </section>
+
+    </main>
+
+    <script src="assets/js/store-shared.js"></script>
+    <script src="assets/js/store-auth.js"></script>
+    <script>
+      window.StoreAuth.updateNav();
+    </script>
+    <script src="assets/js/store-profile.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySwap</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body class="page-search">
+    <header class="top-nav">
+      <div class="top-nav-inner">
+        <div class="brand-left">
+          <a href="index.html" class="brand" aria-label="StudySwap home">
+            <img src="assets/studyswap.png" class="brand-logo" alt="StudySwap" />
+          </a>
+          <a href="landing.html" class="icon-btn" id="searchHomeBtn">HOME</a>
+        </div>
+        <div class="desktop-nav">
+          <nav class="links" aria-label="Shop sections">
+            <a href="index.html" class="link">ALL</a>
+            <a href="index.html?cat=exchange" class="link">EXCHANGE</a>
+            <a href="index.html?cat=buy" class="link">BUY</a>
+            <span class="link active" aria-current="page">SEARCH</span>
+            <a href="index.html" class="link">FILTER</a>
+          </nav>
+        </div>
+        <div class="top-nav-actions">
+          <div class="profile-menu" id="profileMenu">
+            <a href="login.html" class="icon-btn profile-link" id="profileLink" aria-label="Log in">
+              <img
+                class="profile-png"
+                src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+                alt=""
+              />
+            </a>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="profile-dd-email" id="profileEmail"></div>
+              <a class="profile-dd-link profile-dd-item" href="profile.html">PROFILE</a>
+              <a class="profile-dd-link profile-dd-item" href="my-listings.html">MY LISTINGS</a>
+              <a class="profile-dd-link profile-dd-item" href="my-offers.html">MY OFFERS</a>
+              <button type="button" class="profile-dd-item" id="logoutBtn">LOG OUT</button>
+            </div>
+          </div>
+          <a href="chats.html" class="icon-btn nav-side-link"><img class="chats-png" src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="Chats" /></a>
+          <a href="cart.html" class="icon-btn cart-btn" id="cartNavLink" aria-label="View cart">
+            <img
+              class="cart-png"
+              src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+              alt=""
+            />
+            <span id="cartCount" class="dot">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="search-page-main">
+      <aside class="search-alpha-rail" aria-label="Filter by first letter">
+        <span class="search-alpha-title">A–Z</span>
+        <div id="alphaLetters" class="search-alpha-list"></div>
+      </aside>
+      <div class="search-page-center">
+        <div class="search-bar-block">
+          <label class="search-hero-label" for="searchQuery">SEARCH</label>
+          <input
+            type="search"
+            id="searchQuery"
+            class="search-input search-input-hero"
+            placeholder="Title, topic, or course code (e.g. COMP2011)"
+            autocomplete="off"
+          />
+        </div>
+        <section id="searchResults" class="grid-list search-results-grid" aria-live="polite"></section>
+      </div>
+    </main>
+
+    <script src="assets/js/store-shared.js"></script>
+    <script src="assets/js/store-auth.js"></script>
+    <script>
+      window.StoreAuth.updateNav();
+    </script>
+    <script src="assets/js/store-search.js"></script>
+  </body>
+</html>
